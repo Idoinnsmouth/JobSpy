@@ -47,7 +47,7 @@ class RotatingProxySession:
         """Utility method to format a proxy string into a dictionary."""
         if proxy.startswith("http://") or proxy.startswith("https://"):
             return {"http": proxy, "https": proxy}
-        if proxy.startswith("socks5://"):
+        if proxy.startswith("socks5://") or proxy.startswith("socks5h://"):
             return {"http": proxy, "https": proxy}
         return {"http": f"http://{proxy}", "https": f"http://{proxy}"}
 
